@@ -11,7 +11,8 @@ greencar_image = "car2.png";
 
 //Set initial position for a car image.
 greencar_x = 5;
-green_y= 225;
+greencar_y = 225;
+
 function add() {
 	//upload car, and background images on the canvas.
 	background_imgTag = new Image();
@@ -26,93 +27,80 @@ function add() {
 
 function uploadBackground() {
 	//Define function ‘uploadBackground’
-	ctx.drawimage(background_imgTag, 0,0, canvas.width, canvas.height);
+	ctx.drawImage(background_imgTag, 0, 0, canvas.width, canvas.height);
 
 }
 
 function uploadgreencar() {
 	//Define function ‘uploadgreencar’.
-    ctx.drawimage(greencar_imgTag, greencar_x,greencar_y,greencar_width, greencar_height);
+	ctx.drawImage(greencar_imgTag, greencar_x, greencar_y, greencar_width, greencar_height);
 
 }
 
 
 window.addEventListener("keydown", my_keydown);
 
-function my_keydown(e)
-{
+function my_keydown(e) {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-		if(keyPressed == '38')
-		{
-			up();
-			console.log("up");
-		}
-	
-		if(keyPressed == '40')
-		{
-			down();
-			console.log("down");
-		}
-		
-		if(keyPressed == '37')
-		{
-			left();
-			console.log("left");
-		}
-	
-		if(keyPressed == '39')
-		{
-			right();
-			console.log("right");
-		}
-		
-		
+	if (keyPressed == '38') {
+		up();
+		console.log("up");
+	}
+
+	if (keyPressed == '40') {
+		down();
+		console.log("down");
+	}
+
+	if (keyPressed == '37') {
+		left();
+		console.log("left");
+	}
+
+	if (keyPressed == '39') {
+		right();
+		console.log("right");
+	}
+
+
 }
 
-function up()
-{
+function up() {
 	//Define function to move the car upward
-	if(greencar_y >=0)
-	{
+	if (greencar_y >= 0) {
 		greencar_y = greencar_y - 10;
-		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" +greencar_y)
+		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" + greencar_y)
 		uploadBackground();
 		uploadgreencar();
 	}
 }
 
-function down()
-{
+function down() {
 	//Define function to move the car downward
-	if(greencar_y >=0)
-	{
+	if (greencar_y >= 0) {
 		greencar_y = greencar_y + 10;
-		console.log("when down arrow is pressed,  x = " + greencar_x + " | y =" +greencar_y)
+		console.log("when down arrow is pressed,  x = " + greencar_x + " | y =" + greencar_y)
 		uploadBackground();
 		uploadgreencar();
 	}
 }
 
-function left()
-{
+function left() {
 	//Define function to move the car left side
-	if(greencar_x >=0)
-	{
+	if (greencar_x >= 0) {
 		greencar_x = greencar_x - 10;
-		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" +greencar_y)
+		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" + greencar_y)
 		uploadBackground();
 		uploadgreencar();
 	}
 }
 
-function right()
-{
+function right() {
 	//Define function to move the car right side
-	if(greencar_x >=0)
-	{
+	if (greencar_x >= 0) {
 		greencar_x = greencar_x + 10;
-		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" +greencar_y)
+		console.log("when up arrow is pressed,  x = " + greencar_x + " | y =" + greencar_y)
 		uploadBackground();
 		uploadgreencar();
 	}
